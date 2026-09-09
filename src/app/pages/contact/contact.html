@@ -1,0 +1,18 @@
+<p>contact works!</p>
+<p>Nombre: {{ name }}</p>
+<p>{{name}}</p>
+
+    <button>{{ textButton }}</button>
+
+@for (i of data; track data){
+    <div class="container">
+        <h3>{{i.firstName}} {{i.surname}}</h3>
+        <p>fecha de nacimiento: {{i.birthdate}}</p>
+        <p>{{i.email}}</p>
+    </div>
+} @empty {
+    <p>Sin información</p>
+}
+
+
+
