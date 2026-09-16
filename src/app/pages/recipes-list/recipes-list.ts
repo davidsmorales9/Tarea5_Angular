@@ -22,25 +22,40 @@ export class RecipesList {
   _router = inject(Router);
   //router porque es el encargado de la navegación en Android.
 
-  _recipesListFilter:any;
+
+  _recipesListFilter:any = []; // arreglo vacío que inicializa la variable
+
+
+  constructor() { //llama a la variable de arriba y ejecuta la instruccion para desplegar la tabla
+    this._recipesListFilter = this.recipesList.recipes;
+  }
+
 
   viewDetails(id: number){
     this._router.navigate(["recipes-detail", id]);
   }
 
   //TAREA: UNIFICAR ESTAS DOS FUNCIONES
-  filterRecipesListByName() {
-  this._recipesListFilter = this.recipesList
-    .recipes
-    .filter(
-      x => x.name.toLowerCase().includes(this._name.toLowerCase()))
-}
-
-  filterRecipesListByDifficulty(){
-    this._recipesListFilter = this.recipesList
-    .recipes
-    .filter(
-      x => x.difficulty.toLowerCase().includes(this._difficulty.toLowerCase()))
+  //función que filtra por nombre
+  filterRecipes() {
+    if (this.filterType === 'NAME') {
+      this._recipesListFilter = this.recipesList
+        .recipes
+        .filter(
+          x => x.name.toLowerCase().includes(this._name.toLowerCase())
+        );
+    } 
+    // funcion que filtra por dificultad
+    else if (this.filterType === 'DIFFICULTY') {
+      this._recipesListFilter = this.recipesList
+        .recipes
+        .filter(
+          x => x.difficulty.toLowerCase().includes(this._difficulty.toLowerCase())
+        );
+    } 
+    else {
+      this._recipesListFilter = this.recipesList.recipes;
+    }
   }
 
 recipesList = {
