@@ -10,3 +10,4 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 export class App {
   protected readonly title = signal('first-application');
 }
+//
