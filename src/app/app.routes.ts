@@ -5,6 +5,7 @@ import { Recipes } from './pages/recipes/recipes';
 import { RecipesList} from './pages/recipes-list/recipes-list';
 import {RecipesDetail} from './pages/recipes-detail/recipes-detail';
 import {RecipesDetailV2} from './pages/recipes-detail-v2/recipes-detail-v2';
+import { UsersList } from './pages/users-list/users-list';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +14,8 @@ export const routes: Routes = [
     {path: 'recipes', component: Recipes},
     {path: 'recipes-list', component: RecipesList}, //09/09/2026
     {path: 'recipes-detail/:id', component: RecipesDetail}, //09/09/2026
-    {path: 'recipes-detail-v2', component: RecipesDetailV2} //16/09/2026 
+    {path: 'recipes-detail-v2', component: RecipesDetailV2}, //16/09/2026 
+    {path: 'users-list', component: UsersList}//21/09/2026
     //string que se define para ponerlo en el browser como /home o /umes...
 ];
+    
