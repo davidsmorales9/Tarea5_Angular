@@ -1,0 +1,19 @@
+<section class="users-list-page">
+  @for (item of postsWithUsers; track item.postId) {
+    <article class="card">
+      <div class="card-top">
+        <p><strong>Id:</strong> {{ item.userId }}</p>
+        <p><strong>Nombre completo:</strong> {{ item.userFullName }}</p>
+        <p><strong>Edad:</strong> {{ item.age }}</p>
+        <p><strong>Username:</strong> {{ item.username }}</p>
+      </div>
+
+      <div class="card-bottom">
+        <p><strong>Post</strong></p>
+        <p><strong>Id:</strong> {{ item.postId }}</p>
+        <p><strong>Título:</strong> {{ item.postTitle }}</p>
+      </div>
+    </article>
+    
+  }
+</section>
